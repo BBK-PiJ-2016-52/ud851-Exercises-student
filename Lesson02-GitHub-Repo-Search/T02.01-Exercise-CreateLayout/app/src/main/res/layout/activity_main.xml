@@ -66,14 +66,27 @@
         android:hint="@string/your_url_will_show_up_here_when_you_click_search"
         />
 
-    <!--TODO (18) Add a ScrollView-->
-    <!--TODO (19) Set the width to match_parent and the height to wrap_content-->
-    <!--TODO (20) Set the top margin to 16dp-->
+    <!--COMPLETED (18) Add a ScrollView-->
+    <!--COMPLETED (19) Set the width to match_parent and the height to wrap_content-->
+    <!--COMPLETED (20) Set the top margin to 16dp-->
 
-        <!--TODO (21) Within the ScrollView, add a TextView-->
-        <!--TODO (22) Give the TextView an id of @+id/tv_github_search_results_json-->
-        <!--TODO (23) Set the text size to 18sp-->
-        <!--TODO (24) Set the height and width to wrap_content-->
-        <!--TODO (25) Set the text to something that tells the user to make a search-->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_github_search_results_json"
+            android:textSize="18sp"
+            android:hint="@string/do_a_search"
+            />
+    </ScrollView>
+
+        <!--COMPLETED (21) Within the ScrollView, add a TextView-->
+        <!--COMPLETED (22) Give the TextView an id of @+id/tv_github_search_results_json-->
+        <!--COMPLETED (23) Set the text size to 18sp-->
+        <!--COMPLETED (24) Set the height and width to wrap_content-->
+        <!--COMPLETED (25) Set the text to something that tells the user to make a search-->
 
 </LinearLayout>
