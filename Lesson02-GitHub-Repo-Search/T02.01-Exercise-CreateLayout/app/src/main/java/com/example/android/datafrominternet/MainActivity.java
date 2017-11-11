@@ -19,6 +19,7 @@ import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.EditText;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -26,11 +27,10 @@ public class MainActivity extends AppCompatActivity {
     // COMPLETED (27) Create a TextView variable called mUrlDisplayTextView
     // COMPLETED (28) Create a TextView variable called mSearchResultsTextView
 
-    EditText mSearchBoxEditText;
-    EditText mUrlDisplayTextView;
-    EditText mSearchResultsTextView;
+    TextView mSearchBoxEditText;
+    TextView mUrlDisplayTextView;
+    TextView mSearchResultsTextView;
 
-    @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,9 +40,9 @@ public class MainActivity extends AppCompatActivity {
         // COMPLETED (30) Use findViewById to get a reference to mUrlDisplayTextView
         // COMPLETED (31) Use findViewById to get a reference to mSearchResultsTextView
 
-        mSearchBoxEditText = (EditText) findViewById(R.id.et_search_box);
-        mUrlDisplayTextView = (EditText) findViewById(R.id.tv_url_display);
-        mSearchResultsTextView = (EditText) findViewById(R.id.tv_github_search_results_json);
+        mSearchBoxEditText = (TextView) findViewById(R.id.et_search_box);
+        mUrlDisplayTextView = (TextView) findViewById(R.id.tv_url_display);
+        mSearchResultsTextView = (TextView) findViewById(R.id.tv_github_search_results_json);
 
     }
 }

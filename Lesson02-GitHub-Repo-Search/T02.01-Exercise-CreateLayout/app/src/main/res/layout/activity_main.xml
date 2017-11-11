@@ -20,22 +20,18 @@
 <!--COMPLETED (3) Give left, right, and top padding of 16dp-->
 <!--COMPLETED (4) Remove the line that declares the id, we don't need it-->
 <!--COMPLETED (5) Remove the xmlns:app declaration, we don't need that anymore-->
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="16dp"
+    tools:context="com.example.android.datafrominternet.MainActivity"
+    android:orientation="vertical">
 
 
     <!--COMPLETED (6) Delete this TextView-->
-<!--    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        android:paddingLeft="16dp"
-        android:paddingRight="16dp"
-        android:paddingTop="16dp"
-        />-->
-
     <!--COMPLETED (7) Add an EditText-->
     <EditText
         android:id="@+id/et_search_box"
