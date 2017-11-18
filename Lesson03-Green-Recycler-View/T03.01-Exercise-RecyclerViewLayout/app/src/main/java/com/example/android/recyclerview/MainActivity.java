@@ -24,13 +24,6 @@ public class MainActivity extends AppCompatActivity {
 
     private static final int NUM_LIST_ITEMS = 100;
 
-    /*
-     * References to RecyclerView and Adapter to reset the list to its
-     * "pretty" state when the reset menu item is clicked.
-     */
-    private GreenAdapter mAdapter;
-    private RecyclerView mNumbersList;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
          * Using findViewById, we get a reference to our RecyclerView from xml. This allows us to
          * do things like set the adapter of the RecyclerView and toggle the visibility.
          */
-        mNumbersList = (RecyclerView) findViewById(R.id.rv_numbers);
+        RecyclerView mNumbersList = findViewById(R.id.rv_numbers);
 
         /*
          * A LinearLayoutManager is responsible for measuring and positioning item views within a
@@ -65,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
         /*
          * The GreenAdapter is responsible for displaying each item in the list.
          */
-        mAdapter = new GreenAdapter(NUM_LIST_ITEMS);
+        GreenAdapter mAdapter = new GreenAdapter(NUM_LIST_ITEMS);
 
         mNumbersList.setAdapter(mAdapter);
     }
