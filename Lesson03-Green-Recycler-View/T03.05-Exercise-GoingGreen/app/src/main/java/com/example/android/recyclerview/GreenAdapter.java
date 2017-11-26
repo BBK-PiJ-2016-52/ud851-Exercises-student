@@ -15,6 +15,7 @@
  */
 package com.example.android.recyclerview;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -50,12 +51,10 @@ public class GreenAdapter extends RecyclerView.Adapter<GreenAdapter.NumberViewHo
      *
      * @param numberOfItems Number of items to display in list
      */
-    public GreenAdapter(int numberOfItems) {
+    GreenAdapter(int numberOfItems) {
         mNumberItems = numberOfItems;
-        // TODO (9) When a new GreenAdapter is created, set the viewHolderCount to 0
-        if (mNumberItems != 0) {
+        // COMPLETED (9) When a new GreenAdapter is created, set the viewHolderCount to 0
             viewHolderCount = 0;
-        }
     }
     /**
      *
@@ -69,24 +68,30 @@ public class GreenAdapter extends RecyclerView.Adapter<GreenAdapter.NumberViewHo
      *                  for more details.
      * @return A new NumberViewHolder that holds the View for each list item
      */
+    @SuppressLint("SetTextI18n")
     @Override
     public NumberViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {
         Context context = viewGroup.getContext();
         int layoutIdForListItem = R.layout.number_list_item;
         LayoutInflater inflater = LayoutInflater.from(context);
-        boolean shouldAttachToParentImmediately = false;
 
-        View view = inflater.inflate(layoutIdForListItem, viewGroup, shouldAttachToParentImmediately);
+        View view = inflater.inflate(layoutIdForListItem, viewGroup, false);
         NumberViewHolder viewHolder = new NumberViewHolder(view);
 
-        // TODO (12) Set the text of viewHolderIndex to "ViewHolder index: " + viewHolderCount
+        // COMPLETED (12) Set the text of viewHolderIndex to "ViewHolder index: " + viewHolderCount
+        viewHolder.viewHolderIndex.setText("ViewHolder index: " + viewHolderCount);
 
+        // COMPLETED (13) Use ColorUtils.getViewHolderBackgroundColorFromInstance and pass in a Context and the viewHolderCount
+        int backgroundColorForViewHolder = ColorUtils
+                .getViewHolderBackgroundColorFromInstance(context, viewHolderCount);
 
-        // TODO (13) Use ColorUtils.getViewHolderBackgroundColorFromInstance and pass in a Context and the viewHolderCount
-        // TODO (14) Set the background color of viewHolder.itemView with the color from above
+        // COMPLETED (14) Set the background color of viewHolder.itemView with the color from above
+        viewHolder.itemView.setBackgroundColor(backgroundColorForViewHolder);
 
-        // TODO (15) Increment viewHolderCount and log its value
-
+        // COMPLETED (15) Increment viewHolderCount and log its value
+        viewHolderCount++;
+        Log.d(TAG, "onCreateViewHolder: number of ViewHolders created: "
+                + viewHolderCount);
         return viewHolder;
     }
 
@@ -125,7 +130,7 @@ public class GreenAdapter extends RecyclerView.Adapter<GreenAdapter.NumberViewHo
         // Will display the position in the list, ie 0 through getItemCount() - 1
         TextView listItemNumberView;
         // COMPLETED (10) Add a TextView variable to display the ViewHolder index
-        TextView mViewHolderIndex;
+        TextView viewHolderIndex;
 
         /**
          * Constructor for our ViewHolder. Within this constructor, we get a reference to our
@@ -134,13 +139,13 @@ public class GreenAdapter extends RecyclerView.Adapter<GreenAdapter.NumberViewHo
          * @param itemView The View that you inflated in
          *                 {@link GreenAdapter#onCreateViewHolder(ViewGroup, int)}
          */
-        public NumberViewHolder(View itemView) {
+        NumberViewHolder(View itemView) {
             super(itemView);
 
-            listItemNumberView = (TextView) itemView.findViewById(R.id.tv_item_number);
+            listItemNumberView = itemView.findViewById(R.id.tv_item_number);
 
             // COMPLETED (11) Use itemView.findViewById to get a reference to tv_view_holder_instance
-            listItemNumberView = (TextView) itemView.findViewById(R.id.tv_view_holder_instance);
+            viewHolderIndex = itemView.findViewById(R.id.tv_view_holder_instance);
 
 
         }
