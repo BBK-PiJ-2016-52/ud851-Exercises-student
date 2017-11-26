@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity implements GreenAdapter.List
          * Using findViewById, we get a reference to our RecyclerView from xml. This allows us to
          * do things like set the adapter of the RecyclerView and toggle the visibility.
          */
-        mNumbersList = (RecyclerView) findViewById(R.id.rv_numbers);
+        mNumbersList = findViewById(R.id.rv_numbers);
 
         /*
          * A LinearLayoutManager is responsible for measuring and positioning item views within a
@@ -69,11 +69,11 @@ public class MainActivity extends AppCompatActivity implements GreenAdapter.List
          */
         mNumbersList.setHasFixedSize(true);
 
-        // TODO (13) Pass in this as the ListItemClickListener to the GreenAdapter constructor
+        // COMPLETED (13) Pass in this as the ListItemClickListener to the GreenAdapter constructor
         /*
          * The GreenAdapter is responsible for displaying each item in the list.
          */
-        mAdapter = new GreenAdapter(mOnClickListener, NUM_LIST_ITEMS);
+        mAdapter = new GreenAdapter(this, NUM_LIST_ITEMS);
         mNumbersList.setAdapter(mAdapter);
     }
 
@@ -96,8 +96,8 @@ public class MainActivity extends AppCompatActivity implements GreenAdapter.List
              * ways. (in our humble opinion)
              */
             case R.id.action_refresh:
-                // TODO (14) Pass in this as the ListItemClickListener to the GreenAdapter constructor
-                mAdapter = new GreenAdapter(mOnClickListener, NUM_LIST_ITEMS);
+                // COMPLETED (14) Pass in this as the ListItemClickListener to the GreenAdapter constructor
+                mAdapter = new GreenAdapter(this, NUM_LIST_ITEMS);
                 mNumbersList.setAdapter(mAdapter);
                 return true;
         }
