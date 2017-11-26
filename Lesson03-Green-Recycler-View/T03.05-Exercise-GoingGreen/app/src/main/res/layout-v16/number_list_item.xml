@@ -33,8 +33,8 @@
     <!--COMPLETED (1) Add a TextView with id "@+id/tv_view_holder_instance-->
     <!--COMPLETED (2) Set the style to @style/TextAppearance.AppCompat.Title-->
     <!--COMPLETED (3) Set the width and the height to wrap_content-->
-    <!--COMPLETED (4) Align the TextView to the end of the parent-->
-    <!--COMPLETED (5) Align the TextView in the center vertically-->
+    <!--TODO (4) Align the TextView to the end of the parent-->
+    <!--TODO (5) Align the TextView in the center vertically-->
     <!--COMPLETED (6) Set the font family to monospace-->
     <!--COMPLETED (7) Set the text color to "#000"-->
     <TextView
@@ -42,8 +42,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         style="@style/TextAppearance.AppCompat.Title"
-        android:layout_gravity="center_vertical|end"
+        android:textAlignment="center"
         android:fontFamily="monospace"
-        tools:text="ViewHolder instance: 7" />
+        android:textColor="#000"/>
 
 </FrameLayout>
