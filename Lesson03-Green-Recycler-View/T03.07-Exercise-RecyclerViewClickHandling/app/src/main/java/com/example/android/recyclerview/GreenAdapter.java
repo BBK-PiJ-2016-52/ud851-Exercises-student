@@ -39,7 +39,7 @@ public class GreenAdapter extends RecyclerView.Adapter<GreenAdapter.NumberViewHo
 
     private static final String TAG = GreenAdapter.class.getSimpleName();
 
-    // TODO (3) Create a final private ListItemClickListener called mOnClickListener
+    // COMPLETED (3) Create a final private ListItemClickListener called mOnClickListener
     final private ListItemClickListener mOnClickListener;
 
     /*
@@ -169,11 +169,11 @@ public class GreenAdapter extends RecyclerView.Adapter<GreenAdapter.NumberViewHo
         return mNumberItems;
     }
 
-    // TODO (5) Implement OnClickListener in the NumberViewHolder class
+    // COMPLETED (5) Implement OnClickListener in the NumberViewHolder class
     /**
      * Cache of the children views for a list item.
      */
-    class NumberViewHolder extends RecyclerView.ViewHolder {
+    class NumberViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         // Will display the position in the list, ie 0 through getItemCount() - 1
         TextView listItemNumberView;
@@ -202,6 +202,11 @@ public class GreenAdapter extends RecyclerView.Adapter<GreenAdapter.NumberViewHo
          */
         void bind(int listIndex) {
             listItemNumberView.setText(String.valueOf(listIndex));
+        }
+
+        @Override
+        public void onClick(View view) {
+
         }
 
         // TODO (6) Override onClick, passing the clicked item's position (getAdapterPosition()) to mOnClickListener via its onListItemClick method
